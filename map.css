@@ -1,0 +1,21 @@
+html, body, #map { height: 100%; width: 100% }
+body { margin: 0; padding: 0 }
+.info {
+    padding: 6px 8px;
+    background: white;
+    background: rgba(255,255,255,.8);
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+    border-radius: 5px;
+}
+
+.poiswitcher {
+    text-align: left;
+    line-height: 18px;
+    color: #555;
+}
+
+.poiswitcher ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
