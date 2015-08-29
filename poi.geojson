@@ -1,0 +1,96 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "swimming",
+        "group": "sport",
+        "name-ru": "Учебно-спортивный комплекс",
+        "name-en": "Sport complex"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36794984340667,
+          55.15765875519376
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "bus",
+        "group": "transport",
+        "name-ru": "ПКиО",
+        "name-en": "Park of culture",
+        "description-ru": "Автобус 2, 4, 16, 81, 83, 123; троллейбус 1, 8, 14, 19",
+        "description-en": "Bus 2, 4, 16, 81, 83, 123; trolleybus 1, 8, 14, 19"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.365541219711304,
+          55.15918499667768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "bicycle",
+        "group": "sport",
+        "name-ru": "Прокат велосипедов",
+        "name-en": "Bicycle rental"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36241376399993,
+          55.158654802943396
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "shop",
+        "group": "food",
+        "name": "SPAR"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.363733410835266,
+          55.15970292479154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "skiing",
+        "name-ru": "Лыжная база",
+        "name-en": "Skiing base",
+        "group": "sport"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36087954044341,
+          55.15482984394384
+        ]
+      }
+    }
+  ]
+}
