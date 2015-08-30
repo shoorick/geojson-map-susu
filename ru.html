@@ -48,11 +48,11 @@
         "OpenStreetMap / OpenMapSurfer": omsLayer
     };
 
-    var overlayMaps = {
-        "Акварель": watercolorLayer
-    };
+    //var overlayMaps = {
+    //    "Акварель": watercolorLayer
+    //};
 
-    L.control.layers(baseMaps, overlayMaps).addTo(map);
+    L.control.layers(baseMaps /*, overlayMaps*/).addTo(map);
 
 
     var CustomIcon = L.Icon.extend({
@@ -66,24 +66,41 @@
         }
     });
 
-    function popUp(feature, layer) {
-        layer.bindPopup(
-            '<b>'
-            + (feature.properties.name_ru || feature.properties.name || '')
-            + '</b><br>'
-            + (feature.properties.description_ru || feature.properties.description || '')
-        );
-    }
+    var poi_layers = {};
+    for (layer_index in ['food', 'sport', 'transport'])
+        poi_layers[layer_index] = new L.LayerGroup();
+        
+    //function popUp(feature, layer) {
+    //    var p = feature.properties;
+    //    
+    //    L.marker(feature.geometry.coordinates,
+    //        {icon: 'marker/' + p['marker-symbol'] + '.png'})
+    //        .addTo(poi_layers[p.group])
+    //        .bindPopup(
+    //            '<b>'
+    //            + (p.name_ru || p.name || '')
+    //            + '</b><br>'
+    //            + (p.description_ru || p.description || '')
+    //        );
+    //    console.log('name: ' + (p.name_ru || p.name) + '; group: ' + p.group );
+    //}
 
-    var geojsonLayer = new L.GeoJSON.AJAX('./poi.geojson', {onEachFeature:popUp});
-    //geojsonLayer.addTo(map);
+    var geojsonLayer = new L.GeoJSON.AJAX('./poi.geojson', {
+        onEachFeature: function(feature, layer) {
+            var p = feature.properties;
+            
+            layer.bindPopup(
+                '<b>'
+                + (p.name_ru || p.name || '')
+                + '</b><br>'
+                + (p.description_ru || p.description || '')
+            );
+        }
+    });
+
+    geojsonLayer.addTo(map);
     
 
-  //
-  //var poi_layers = {};
-  //
-  //for (layer_index in markers) {
-  //  poi_layers[markers[layer_index][0]] = new L.LayerGroup();
   //  for (icon_index in markers[layer_index][1]) {
   //    for (poi_index in markers[layer_index][1][icon_index][1]) {
   //      L.marker(markers[layer_index][1][icon_index][1][poi_index][0],
