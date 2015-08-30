@@ -119,7 +119,12 @@
     var hash = new L.Hash(map);
 
     function popUp(feature, layer) {
-        layer.bindPopup(feature.properties.name);
+        layer.bindPopup(
+            '<b>'
+            + (feature.properties.name_ru || feature.properties.name || '')
+            + '</b><br>'
+            + (feature.properties.description_ru || feature.properties.description || '')
+        );
     }
 
     var geojsonLayer = new L.GeoJSON.AJAX('./poi.geojson', {onEachFeature:popUp});
