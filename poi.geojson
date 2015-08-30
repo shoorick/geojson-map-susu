@@ -8,8 +8,8 @@
         "marker-size": "medium",
         "marker-symbol": "swimming",
         "group": "sport",
-        "name-ru": "Учебно-спортивный комплекс",
-        "name-en": "Sport complex"
+        "name_ru": "Учебно-спортивный комплекс",
+        "name_en": "Sport complex"
       },
       "geometry": {
         "type": "Point",
@@ -26,10 +26,10 @@
         "marker-size": "medium",
         "marker-symbol": "bus",
         "group": "transport",
-        "name-ru": "ПКиО",
-        "name-en": "Park of culture",
-        "description-ru": "Автобус 2, 4, 16, 81, 83, 123; троллейбус 1, 8, 14, 19",
-        "description-en": "Bus 2, 4, 16, 81, 83, 123; trolleybus 1, 8, 14, 19"
+        "name_ru": "ПКиО",
+        "name_en": "Park of culture",
+        "description_ru": "Автобус 2, 4, 16, 81, 83, 123;<br>троллейбус 1, 8, 14, 19",
+        "description_en": "Bus 2, 4, 16, 81, 83, 123;<br>trolleybus 1, 8, 14, 19"
       },
       "geometry": {
         "type": "Point",
@@ -46,8 +46,8 @@
         "marker-size": "medium",
         "marker-symbol": "bicycle",
         "group": "sport",
-        "name-ru": "Прокат велосипедов",
-        "name-en": "Bicycle rental"
+        "name_ru": "Прокат велосипедов",
+        "name_en": "Bicycle rental"
       },
       "geometry": {
         "type": "Point",
@@ -80,8 +80,8 @@
         "marker-color": "#7e7e7e",
         "marker-size": "medium",
         "marker-symbol": "skiing",
-        "name-ru": "Лыжная база",
-        "name-en": "Skiing base",
+        "name_ru": "Лыжная база",
+        "name_en": "Skiing base",
         "group": "sport"
       },
       "geometry": {
