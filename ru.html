@@ -39,7 +39,7 @@
     });
 
     var map = L.map('map', {
-        layers: [ campusLayer, watercolorLayer ],
+        layers: [ campusLayer /*, watercolorLayer */ ],
         maxBounds: [[55.09, 61.22], [55.29, 61.52]]
     }).setView([55.16, 61.368], 17);
 
@@ -94,6 +94,14 @@
                 + (p.name_ru || p.name || '')
                 + '</b><br>'
                 + (p.description_ru || p.description || '')
+            );
+        },
+        pointToLayer: function(feature, latlon) {
+            var p = feature.properties;
+            return L.marker(
+                latlon, {
+                    icon: new CustomIcon({iconUrl: 'marker/' + p['marker-symbol'] + '.png'})
+                }
             );
         }
     });
