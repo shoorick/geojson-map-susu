@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head><title>Карта - Южно-Уральский государственный университет</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script data-src="https://raw.github.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js" src="leaflet.ajax.min.js"></script>
+<script src="http://susu.ru/js/leaflet-hash.js"></script>
+<link rel="stylesheet" href="map.css" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/sites/all/themes/bootsusu/icon/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/sites/all/themes/bootsusu/icon/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/sites/all/themes/bootsusu/icon/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="/sites/all/themes/bootsusu/icon/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="/sites/all/themes/bootsusu/favicon.ico">
+</head>
+<body>
+
+<div id="map"></div>
+
+<script>
+    // tile layers
+    campusLayer = L.tileLayer('http://{s}.tile.susu.ac.ru/susu-campus-ru/{z}/{x}/{y}.png', {
+        attribution: 'Карта &copy; Участники <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Icons <a href="https://mapicons.mapsmarker.com">Maps Icons Collection</a>',
+        tms: true,
+        minZoom: 10,
+        maxZoom: 18
+    });
+    omsLayer = L.tileLayer('http://openmapsurfer.uni-hd.de/tiles/roads/x={x}&y={y}&z={z}', {
+        attribution: 'Карта &copy; Участники <a href="http://openstreetmap.org">OpenStreetMap</a>, тайлы <a href="http://giscience.uni-hd.de/">GIScience Heidelberg</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Icons <a href="https://mapicons.mapsmarker.com">Maps Icons Collection</a>',
+        tms: false,
+        minZoom:  0,
+        maxZoom: 18
+    });
+    watercolorLayer = L.tileLayer('http://{s}.tile.susu.ac.ru/susu-watercolor-only/{z}/{x}/{y}.png', {
+        tms: true,
+        minZoom: 15,
+        maxZoom: 18
+    });
+
+    var map = L.map('map', {
+        layers: [ campusLayer, watercolorLayer ],
+        maxBounds: [[55.09, 61.22], [55.29, 61.52]]
+    }).setView([55.16, 61.368], 17);
+
+    var baseMaps = {
+        "OpenStreetMap светлая": campusLayer,
+        "OpenStreetMap / OpenMapSurfer": omsLayer
+    };
+
+    var overlayMaps = {
+        "Акварель": watercolorLayer
+    };
+
+    L.control.layers(baseMaps, overlayMaps).addTo(map);
+
+
+    var CustomIcon = L.Icon.extend({
+        options: {
+            shadowUrl: 'marker/shadow.png',
+            iconSize:     [32, 37],
+            iconAnchor:   [17, 36],
+            popupAnchor:  [-1, -32],
+            shadowSize:   [41, 41],
+            shadowAnchor: [16, 43]
+        }
+    });
+
+
+  //
+  //var poi_layers = {};
+  //
+  //for (layer_index in markers) {
+  //  poi_layers[markers[layer_index][0]] = new L.LayerGroup();
+  //  for (icon_index in markers[layer_index][1]) {
+  //    for (poi_index in markers[layer_index][1][icon_index][1]) {
+  //      L.marker(markers[layer_index][1][icon_index][1][poi_index][0],
+  //        {icon: markers[layer_index][1][icon_index][0]})
+  //        .addTo(poi_layers[markers[layer_index][0]])
+  //        .bindPopup('<b>' + markers[layer_index][1][icon_index][1][poi_index][1]
+  //            + '</b><br>' + markers[layer_index][1][icon_index][1][poi_index][2]
+  //        )
+  //    }
+  //  }
+  //}
+  //
+  //  // Toggle layers
+  //  $(function(){
+  //    $('.poiswitcher input:checkbox').on('change', function(){
+  //      var item = $(this).context;
+  //      if ( item.checked )
+  //        poi_layers[item.id].addTo(map);
+  //      else
+  //        map.removeLayer(poi_layers[item.id]);
+  //    })
+  //  });
+  //
+    var poiswitcher = L.control({position: 'bottomright'});
+
+    poiswitcher.onAdd = function (map) {
+
+        var div = L.DomUtil.create('div', 'info poiswitcher');
+        div.innerHTML = '<ul>'
+            + '<li><label><input type="checkbox" id="academic"> Учебные корпуса</label></li>'
+            + '<li><label><input type="checkbox" id="hostel"> Общежития</label></li>'
+            + '<li><label><input type="checkbox" id="food"> Питание</label></li>'
+            + '<li><label><input type="checkbox" id="health"> Здоровье</label></li>'
+            + '<li><label><input type="checkbox" id="service"> Сервис</label></li>'
+            + '<li><label><input type="checkbox" id="transport"> Транспорт</label></li>'
+            + '<li><label><input type="checkbox" id="finance"> Финансы</label></li>'
+            + '<li><label><input type="checkbox" id="culture"> Культура</label></li>'
+            + '<li><label><input type="checkbox" id="sport"> Спорт</label></li>'
+          + '</ul>';
+        return div;
+    };
+
+    poiswitcher.addTo(map);
+
+    var hash = new L.Hash(map);
+
+    function popUp(feature, layer) {
+        layer.bindPopup(feature.properties.name);
+    }
+
+    var geojsonLayer = new L.GeoJSON.AJAX('./poi.geojson', {onEachFeature:popUp});
+    geojsonLayer.addTo(map);
+    
+
+</script>
+
+</body>
+</html>
