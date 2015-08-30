@@ -66,6 +66,18 @@
         }
     });
 
+    function popUp(feature, layer) {
+        layer.bindPopup(
+            '<b>'
+            + (feature.properties.name_ru || feature.properties.name || '')
+            + '</b><br>'
+            + (feature.properties.description_ru || feature.properties.description || '')
+        );
+    }
+
+    var geojsonLayer = new L.GeoJSON.AJAX('./poi.geojson', {onEachFeature:popUp});
+    //geojsonLayer.addTo(map);
+    
 
   //
   //var poi_layers = {};
@@ -84,17 +96,17 @@
   //  }
   //}
   //
-  //  // Toggle layers
-  //  $(function(){
-  //    $('.poiswitcher input:checkbox').on('change', function(){
-  //      var item = $(this).context;
-  //      if ( item.checked )
-  //        poi_layers[item.id].addTo(map);
-  //      else
-  //        map.removeLayer(poi_layers[item.id]);
-  //    })
-  //  });
-  //
+    // Toggle layers
+    $(function(){
+      $('.poiswitcher input:checkbox').on('change', function(){
+        var item = $(this).context;
+        if ( item.checked )
+          poi_layers[item.id].addTo(map);
+        else
+          map.removeLayer(poi_layers[item.id]);
+      })
+    });
+  
     var poiswitcher = L.control({position: 'bottomright'});
 
     poiswitcher.onAdd = function (map) {
@@ -117,19 +129,6 @@
     poiswitcher.addTo(map);
 
     var hash = new L.Hash(map);
-
-    function popUp(feature, layer) {
-        layer.bindPopup(
-            '<b>'
-            + (feature.properties.name_ru || feature.properties.name || '')
-            + '</b><br>'
-            + (feature.properties.description_ru || feature.properties.description || '')
-        );
-    }
-
-    var geojsonLayer = new L.GeoJSON.AJAX('./poi.geojson', {onEachFeature:popUp});
-    geojsonLayer.addTo(map);
-    
 
 </script>
 
