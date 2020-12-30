@@ -1,0 +1,254 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "node/-103989",
+      "properties": {
+        "bench": "yes",
+        "bin": "yes",
+        "description:en": "Bus: 2, 4, 15, 81, 83; Trolleybus: 8, 14, 19",
+        "description:ru": "Автобус: 2, 4, 15, 81, 83; Троллейбус: 8, 14, 19",
+        "name:en": "South Ural State University",
+        "name:ru": "Южно-Уральский государственный университет",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36919706926,
+          55.1595788073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-103990",
+      "properties": {
+        "amenity": "university",
+        "description:en": "76, Lenin ave",
+        "description:ru": "проспект Ленина, 76",
+        "name:en": "Main academic building",
+        "name:ru": "Главный учебный корпус",
+        "opening_hours": "07:30-23:00",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.37018143863,
+          55.1604767413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-103991",
+      "properties": {
+        "amenity": "hospital",
+        "description:en": "82, Lenin avenue",
+        "description:ru": "проспект Ленина, 82",
+        "name:en": "City hospital No 2",
+        "name:ru": "Городская клиническая больница № 2",
+        "node": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36479556292,
+          55.16002011566
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-103992",
+      "properties": {
+        "amenity": "university",
+        "description:en": "85, Lenin avenue",
+        "description:ru": "проспект Ленина, 85",
+        "name:en": "Academic building No 2",
+        "name:ru": "Учебный корпус № 2",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36870354146,
+          55.15906700773
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-103993",
+      "properties": {
+        "leisure": "pitch",
+        "sport": "ice_hockey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36477142036,
+          55.16064682688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-103996",
+      "properties": {
+        "leisure": "swimming_pool"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36793910921,
+          55.1575974622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-103998",
+      "properties": {
+        "leisure": "pitch",
+        "node": 0,
+        "sport": "soccer",
+        "surface": "ground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.35847090602,
+          55.16117086814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-104005",
+      "properties": {
+        "leisure": "pitch",
+        "node": 0,
+        "sport": "soccer",
+        "surface": "ground"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.35873912692,
+          55.1601043972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-104006",
+      "properties": {
+        "leisure": "pitch",
+        "sport": "gymnastics"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.35988711774,
+          55.15922790529
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-104009",
+      "properties": {
+        "sport": "beachvolleyball"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36031090677,
+          55.1604169834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-104012",
+      "properties": {
+        "bench": "yes",
+        "bin": "yes",
+        "name:en": "South Ural State University",
+        "name:ru": "Южно-Уральский государственный университет",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.3715413186,
+          55.15934436142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-104013",
+      "properties": {
+        "bench": "yes",
+        "bin": "yes",
+        "name:en": "Grazhdanproject Institute",
+        "name:ru": "Институт «Гражданпроект»",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.37451857328,
+          55.15975195906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-104679",
+      "properties": {
+        "amenity": "clinic",
+        "description:en": "60, ulitsa Soni Krivoy",
+        "description:ru": "улица Сони Кривой, 60",
+        "name:en": "Medical center of SUSU",
+        "name:ru": "Медицинский центр «Дом здоровья ЮУрГУ»",
+        "node": 0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36761724412,
+          55.15751471237
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/-104800",
+      "properties": {
+        "amenity": "pharmacy",
+        "description:en": "5, ulitsa Lesoparkovaya",
+        "description:ru": "улица Лесопарковая, 5",
+        "name:en": "Klassika pharmacy",
+        "name:ru": "Классика"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36507183246,
+          55.15705843325
+        ]
+      }
+    }
+  ]
+}
