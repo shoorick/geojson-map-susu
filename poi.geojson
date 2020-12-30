@@ -22,20 +22,40 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#7e7e7e",
+        "marker-color": "#993300",
         "marker-size": "medium",
         "marker-symbol": "bus",
         "group": "transport",
         "name_ru": "ПКиО",
         "name_en": "Park of culture",
-        "description_ru": "Автобус 2, 4, 16, 81, 83, 123;<br>троллейбус 1, 8, 14, 19",
-        "description_en": "Bus 2, 4, 16, 81, 83, 123;<br>trolleybus 1, 8, 14, 19"
+        "description_ru": "Автобус 2, 4, 16, 81, 83;<br>троллейбус 8, 14, 19",
+        "description_en": "Bus 2, 4, 16, 81, 83;<br>trolleybus 8, 14, 19"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           61.365541219711304,
           55.15918499667768
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#993300",
+        "marker-size": "medium",
+        "marker-symbol": "bus",
+        "group": "transport",
+        "name_ru": "ПКиО",
+        "name_en": "Park of culture",
+        "description_ru": "Автобус 2, 4, 16, 81, 83;<br>троллейбус 8, 14, 19",
+        "description_en": "Bus 2, 4, 16, 81, 83;<br>trolleybus 8, 14, 19"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.36915683746338,
+          55.159607920730025
         ]
       }
     },
@@ -60,9 +80,9 @@
     {
       "type": "Feature",
       "properties": {
-        "marker-color": "#7e7e7e",
+        "marker-color": "#9900cc",
         "marker-size": "medium",
-        "marker-symbol": "shop",
+        "marker-symbol": "grocery",
         "group": "food",
         "name": "SPAR"
       },
@@ -71,6 +91,23 @@
         "coordinates": [
           61.363733410835266,
           55.15970292479154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#9900cc",
+        "marker-size": "medium",
+        "marker-symbol": "grocery",
+        "group": "food",
+        "name": "Пятёрочка"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          61.365530490875244,
+          55.1570304661271
         ]
       }
     },
